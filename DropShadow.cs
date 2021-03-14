@@ -7,13 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// (new Core.DropShadow()).ApplyShadows(this);
 namespace Core
 {
     public class DropShadow
     {
         #region Shadowing
-
         #region Fields
 
         private bool _isAeroEnabled = false;
@@ -28,7 +26,6 @@ namespace Core
         private const int WM_ACTIVATEAPP = 0x001C;
 
         #endregion
-
         #region Structures
 
         [EditorBrowsable(EditorBrowsableState.Never)]
@@ -41,9 +38,7 @@ namespace Core
         }
 
         #endregion
-
         #region Methods
-
         #region Public
 
         [DllImport("dwmapi.dll")]
@@ -62,15 +57,12 @@ namespace Core
         public static bool IsCompositionEnabled()
         {
             if (Environment.OSVersion.Version.Major < 6) return false;
-
             bool enabled;
             DwmIsCompositionEnabled(out enabled);
-
             return enabled;
         }
 
         #endregion
-
         #region Private
 
         [DllImport("dwmapi.dll")]
@@ -100,15 +92,12 @@ namespace Core
         }
 
         #endregion
-
         #region Overrides
 
         public void ApplyShadows(Form form)
         {
             var v = 2;
-
             DwmSetWindowAttribute(form.Handle, 2, ref v, 4);
-
             MARGINS margins = new MARGINS()
             {
                 bottomHeight = 1,
@@ -121,9 +110,7 @@ namespace Core
         }
 
         #endregion
-
         #endregion
-
         #endregion
     }
 }
