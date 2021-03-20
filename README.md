@@ -1,8 +1,8 @@
-## How to use it.
+## Documentation.
 
-###### Set shadow to your windows form without border style by this class.
-1. To implement this class, create new class in your project then copy all the code off class **DropShadow.cs** and past it into your class.
-2. Then you need to implement this class `On initialize`.
+###### This reference will help you to set shadow whitout form border style.
+1. Download **DLL** reference [FShadow](https://github.com/dvhamham/CsharpShadow/raw/main/FShadow.rar) and add it into your refernces.
+2. Implement this `On initialize`.
 ```csharp
-(new Core.DropShadow()).ApplyShadows(this);
+new DropShadow().ApplyShadows(this);
  ```
